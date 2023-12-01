@@ -1,35 +1,41 @@
 //color palette
-var lightblue, yellow, pink, brown, purple;
+var blue, yellow, pink, brown, darkGreen, green;
 
-var shelves = [];
-
-var shelveLevels = 3;
-
-const shelveSizes = [60,80,100, 120, 150];
-const shelveXGap = 20;
-const shelveYGap = 66;
+//parameters [BB = blueberry] [PA = pineapple]
+const BBOnePosition = [80, 110];
+const BBTwoPosition = [170, 180];
+const PAOnePosition = [150, 60];
+const crossStrokeWeight = 5;
+const squareSize = 40;
+const BBSize = 30;
+const PASize = 60;
+const PAAngle = 20;
+const BBAngle = -20;
 
 /*
  *
  */
 function setup_wallpaper(pWallpaper) {
-  //pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
   pWallpaper.resolution(FIT_TO_SCREEN);
-  pWallpaper.show_guide(true); //set this to false when you're ready to print
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
   pWallpaper.grid_settings.cell_width = 200;
   pWallpaper.grid_settings.cell_height = 200;
-  pWallpaper.grid_settings.row_offset = 70;
+  pWallpaper.grid_settings.row_offset = 65;
 
-  strokeWeight(0.2);
-  lightblue = color(39,94,172);
-  //138, 243, 255
-  yellow = color(237, 246, 125);
-  pink = color(251, 204, 214);
+  //setting up colours
+  blue = color(39, 94, 172);
+  yellow = color(253, 187, 76);
+  pink = color(251, 204, 214, 180);
   brown = color(82, 70, 50);
-  purple = color(112, 86, 109);
+  green = color(188, 215, 90);
+  darkGreen = color(82, 191, 54);
+
+  stroke(pink);
+  fill(pink);
 
 }
 
@@ -37,83 +43,146 @@ function setup_wallpaper(pWallpaper) {
  *
  */
 function wallpaper_background() {
-  background(pink);
-  
+  background(240, 187, 198);
 }
 
 /*
  *
  */
 function my_symbol() {
-  noStroke();
-  fill(235, 183, 194);
-  strokeWeight(0.2);
-  for(var i = 0; i < shelveLevels; i++)
+  //creating the rectangles in the background
+  rect(20, 20, squareSize, squareSize);
+  rect(40, 40, squareSize, squareSize);
+
+  //creating triangle in the background
+  triangle(120, 120, 90, 150, 150, 150);
+
+  //creating the cross in background
+  strokeWeight(crossStrokeWeight);
+  line(20, 150, 50, 180);
+  line(50, 150, 20, 180);
+
+  //displaying the two blueberries and pineapple
+  display(BBOnePosition[0], BBOnePosition[1], BBAngle, new Blueberry(BBSize));
+  display(BBTwoPosition[0], BBTwoPosition[1], BBAngle, new Blueberry(BBSize));
+  display(PAOnePosition[0], PAOnePosition[1], PAAngle, new Pineapple(PASize));
+}
+
+/*
+ *
+ */
+function display(x, y, angle, obj) 
+{
+  push();
+  translate(x, y); 
+  rotate(angle)
+  obj.show(); //shows the object on the screen
+  pop();
+}
+
+/*
+ *
+ */
+class Pineapple 
+{
+  constructor(size) 
   {
-    let length = shelveSizes[(Math.random()*3).toFixed(0)];
-    shelves.push(new Shelve(10, 30+i*shelveYGap, length, 10, 25, 10));
-    if(length < 150) shelves.push(new Shelve(10+length+shelveXGap, 30+i*shelveYGap, 140-length, 10, 25, 10));
-  }
-
-  for(var i = 0; i < shelves.length; i++)
-  { 
-    shelves[i].display();
-  }
-
-  let x = new Blueberry(30,70,30);
-  fill(lightblue);
-  x.display();
-  shelves = [];
-}
-
-class Shelve{
-  constructor(x,y,length, height, depthX, depth){
-    this.x = x;
-    this.y = y;
-    this.length = length;
-    this.height= height;
-    this.depthX = depthX;
-    this.depth = depth;
-  }
-
-  display(){
-    fill(120, 108, 90);
-    rect(this.x, this.y, this.length, this.height);
-    fill(153, 140, 121);
-    quad(this.x, this.y, 
-         this.x+this.length, this.y, 
-         this.x+this.length+this.depthX, this.y-this.depth, 
-         this.x+this.depthX, this.y-this.depth);
-    
-   fill(84, 77, 66);
-    quad(this.x+this.length,this.y+this.height,
-         this.x+this.length,this.y, 
-         this.x+this.length+this.depthX, this.y-this.depth, 
-         this.x+this.length+this.depthX,this.y+this.height-this.depth);
-
-  }
-}
-
-class Pineapple{
-  constructor(size){
-    this.size = size;
-  }
-}
-
-class Blueberry{
-  constructor(x,y,size){
-    this.x = x;
-    this.y = y;
     this.size = size;
   }
 
-  display(){
-    circle(this.x, this.y, this.size);
+  show() 
+  {
+    stroke(brown);
+    strokeWeight(0.5);
+
+    fill(yellow);
+    ellipse(0, 0, this.size / 1.5, this.size / 1.2);
+
+    fill(0);
+    circle(-8, 0, 6);
+    circle(8, 0, 6);
+
+    arc(0, 5, this.size / 8, this.size / 8, 0, 180, CHORD);
+
+    fill(255);
+    circle(-9, -1, 2);
+    circle(7, -1, 2);
+
+    fill(green);
+
+    push();
+    translate(-9, -28);
+    rotate(-70);
+    ellipse(0, 0, 10, 25);
+    pop();
+
+    push();
+    translate(9, -28);
+    rotate(70);
+    ellipse(0, 0, 10, 25);
+    pop();
+
+    fill(darkGreen);
+    push();
+    translate(-6, -31);
+    rotate(140);
+    ellipse(0, 0, 10, 25);
+    pop();
+
+    push();
+    translate(6, -31);
+    rotate(50);
+    ellipse(0, 0, 10, 25);
+    pop();
+
+    fill(green);
+    push();
+    translate(0, -33);
+    ellipse(0, 0, 10, 25);
+    pop();
+
+
+
+
   }
 }
 
-class Strawberry{
-  constructor(size){
+/*
+ *
+ */
+class Blueberry {
+  constructor(size) {
     this.size = size;
+  }
+
+  show() {
+    stroke(brown);
+    strokeWeight(0.5);
+    fill(blue);
+    circle(0, 0, this.size);
+    fill(15, 61, 121);
+    beginShape();
+    vertex(10, -2 - this.size / 2);
+    vertex(5, -this.size / 2);
+    vertex(0, -2 - this.size / 2);
+    vertex(-5, -this.size / 2);
+    vertex(-10, -2 - this.size / 2);
+    vertex(-10, 4 - this.size / 2);
+    vertex(10, 4 - this.size / 2);
+    endShape();
+
+    fill(51, 136, 255);
+    noStroke();
+    circle(this.size / 3.33, 7, 4);
+    circle(-9, 7, 4);
+    fill(0);
+    circle(-8, 0, 6);
+    circle(8, 0, 6);
+    circle(0, 6, 4);
+
+    fill(255);
+    circle(-9, -1, 2);
+    circle(7, -1, 2);
+
   }
 }
