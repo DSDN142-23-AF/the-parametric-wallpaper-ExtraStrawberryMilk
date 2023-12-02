@@ -9,46 +9,443 @@ Your final settings.txt will look something like this when you are finished:
 
 Wallpaper 1:
 
-//your parameter variables go here!
-let rect_width  = 20;
-let rect_height = 20;
-let paramter1 = 10;
-let paramter2 = true;
-let paramter3 = 50; 
-let paramter4 = 0; 
-let paramter5 = 60;
+const BBOnePosition = [80, 110];
+const BBTwoPosition = [170, 180];
+const PAOnePosition = [150, 60];
+const crossStrokeWeight = 5;
+const squareSize = 40;
+const BBSize = 30;
+const PASize = 60;
+const PAAngle = 0;
+const BBAngle = -0;
+const drawBlueberry = true;
 
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.resolution(A3);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 50;
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 65;
+
+  //setting up colours
+  blue = color(39, 94, 172);
+  yellow = color(253, 187, 76);
+  pink = color(251, 204, 214, 180);
+  brown = color(82, 70, 50);
+  green = color(188, 215, 90);
+  darkGreen = color(82, 191, 54);
+
+  stroke(pink);
+  fill(pink);
+
 }
 
 /////////////////////////////////
 
 Wallpaper 2:
 
-//your parameter variables go here!
-let rect_width  = 10;
-let rect_height = 10;
-let paramter1 = 20;
-let paramter2 = false;
-let paramter3 = 50; 
-let paramter4 = 80; 
-let paramter5 = 30;
+//color palette
+var blue, yellow, pink, brown, darkGreen, green;
 
+//parameters [BB = blueberry] [PA = pineapple]
+const BBOnePosition = [80, 110];
+const BBTwoPosition = [170, 180];
+const PAOnePosition = [150, 60]; 
+const crossStrokeWeight = 5;
+const squareSize = 0;
+const BBSize = 100;
+const PASize = 200;
+const PAAngle = 10;
+const BBAngle = -30;
+const drawBlueberry = true;
+
+/*
+ *
+ */
 function setup_wallpaper(pWallpaper) {
   pWallpaper.output_mode(GRID_WALLPAPER);
-  pWallpaper.resolution(NINE_LANDSCAPE);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.resolution(NINE_PORTRAIT);
   pWallpaper.show_guide(false); //set this to false when you're ready to print
 
   //Grid settings
-  pWallpaper.grid_settings.cell_width  = 100;
-  pWallpaper.grid_settings.cell_height = 100;
-  pWallpaper.grid_settings.row_offset  = 0;
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 65;
+
+  //setting up colours
+  blue = color(39, 94, 172);
+  yellow = color(253, 187, 76);
+  pink = color(251, 204, 214, 180);
+  brown = color(82, 70, 50);
+  green = color(188, 215, 90);
+  darkGreen = color(82, 191, 54);
+
+  stroke(pink);
+  fill(pink);
+
+}
+\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+Wallpaper 3:
+
+
+//color palette
+var blue, yellow, pink, brown, darkGreen, green;
+
+//parameters [BB = blueberry] [PA = pineapple]
+const BBOnePosition = [80, 110];
+const BBTwoPosition = [170, 180];
+const PAOnePosition = [150, 60]; 
+const crossStrokeWeight = 3;
+const squareSize = 100;
+const BBSize = 30;
+const PASize = 100;
+const PAAngle = 0;
+const BBAngle = -45;
+const drawBlueberry = true;
+
+/*
+ *
+ */
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 65;
+
+  //setting up colours
+  blue = color(39, 94, 172);
+  yellow = color(253, 187, 76);
+  pink = color(251, 204, 214, 180);
+  brown = color(82, 70, 50);
+  green = color(188, 215, 90);
+  darkGreen = color(82, 191, 54);
+
+  stroke(pink);
+  fill(pink);
+
+}
+
+\\\\\\\\\\\\ 
+
+Wallpaper 4:
+
+//color palette
+var blue, yellow, pink, brown, darkGreen, green;
+
+//parameters [BB = blueberry] [PA = pineapple]
+const BBOnePosition = [80, 110];
+const BBTwoPosition = [170, 180];
+const PAOnePosition = [150, 60]; 
+const crossStrokeWeight = 3;
+const squareSize = 30;
+const BBSize = 80;
+const PASize = 40;
+const PAAngle = 135;
+const BBAngle = 45;
+const drawBlueberry = true;
+/*
+ *
+ */
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 65;
+
+  //setting up colours
+  blue = color(39, 94, 172);
+  yellow = color(253, 187, 76);
+  pink = color(251, 204, 214, 180);
+  brown = color(82, 70, 50);
+  green = color(188, 215, 90);
+  darkGreen = color(82, 191, 54);
+
+  stroke(pink);
+  fill(pink);
+
+}
+
+///////////////
+
+Wallpaper 5:
+
+//color palette
+var blue, yellow, pink, brown, darkGreen, green;
+
+//parameters [BB = blueberry] [PA = pineapple]
+const BBOnePosition = [80, 110];
+const BBTwoPosition = [170, 180];
+const PAOnePosition = [150, 60]; 
+const crossStrokeWeight = 5;
+const squareSize = 40;
+const BBSize = 50;
+const PASize = 60;
+const PAAngle = 45;
+const BBAngle = -45;
+const drawBlueberry = true;
+
+/*
+ *
+ */
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 79;
+
+  //setting up colours
+  blue = color(39, 94, 172);
+  yellow = color(253, 187, 76);
+  pink = color(251, 204, 214, 180);
+  brown = color(82, 70, 50);
+  green = color(188, 215, 90);
+  darkGreen = color(82, 191, 54);
+
+  stroke(pink);
+  fill(pink);
+
+}
+\\\\\\\\\\\\\\\
+
+Wallpaper 6:
+
+//color palette
+var blue, yellow, pink, brown, darkGreen, green;
+
+//parameters [BB = blueberry] [PA = pineapple]
+const BBOnePosition = [80, 110];
+const BBTwoPosition = [170, 180];
+const PAOnePosition = [150, 60]; 
+const crossStrokeWeight = 5;
+const squareSize = 90;
+const BBSize = 30;
+const PASize = 100;
+const PAAngle = 20;
+const BBAngle = 140;
+const drawBlueberry = false;
+
+/*
+ *
+ */
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GLIDE_WALLPAPER);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 30;
+
+  //setting up colours
+  blue = color(39, 94, 172);
+  yellow = color(253, 187, 76);
+  pink = color(251, 204, 214, 180);
+  brown = color(82, 70, 50);
+  green = color(188, 215, 90);
+  darkGreen = color(82, 191, 54);
+
+  stroke(pink);
+  fill(pink);
+
+}
+\\\\\\\\\\\\\\\\\\\
+
+Wallpaper 7:
+
+//color palette
+var blue, yellow, pink, brown, darkGreen, green;
+
+//parameters [BB = blueberry] [PA = pineapple]
+const BBOnePosition = [160, 100];
+const BBTwoPosition = [20, 34];
+const PAOnePosition = [70, 160]; 
+const crossStrokeWeight = 5;
+const squareSize = 60;
+const BBSize = 50;
+const PASize = 200;
+const PAAngle = 20;
+const BBAngle = 50;
+const drawBlueberry = true;
+
+/*
+ *
+ */
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 30;
+
+  //setting up colours
+  blue = color(39, 94, 172);
+  yellow = color(253, 187, 76);
+  pink = color(251, 204, 214, 180);
+  brown = color(82, 70, 50);
+  green = color(188, 215, 90);
+  darkGreen = color(82, 191, 54);
+
+  stroke(pink);
+  fill(pink);
+
+}
+\\\\\\\\\\\\\\\\\\\
+
+Wallpaper 8:
+
+//color palette
+var blue, yellow, pink, brown, darkGreen, green;
+
+//parameters [BB = blueberry] [PA = pineapple]
+const BBOnePosition = [160, 100];
+const BBTwoPosition = [150, 34];
+const PAOnePosition = [155, 160]; 
+const crossStrokeWeight = 5;
+const squareSize = 10;
+const BBSize = 50;
+const PASize = 80;
+const PAAngle = 25;
+const BBAngle = -25;
+const drawBlueberry = true;
+
+/*
+ *
+ */
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 30;
+
+  //setting up colours
+  blue = color(39, 94, 172);
+  yellow = color(253, 187, 76);
+  pink = color(251, 204, 214, 180);
+  brown = color(82, 70, 50);
+  green = color(188, 215, 90);
+  darkGreen = color(82, 191, 54);
+
+  stroke(pink);
+  fill(pink);
+
+}
+
+\\\\\\\\\\\\\\\\\\\\\
+
+Wallpaper9:
+
+//color palette
+var blue, yellow, pink, brown, darkGreen, green;
+
+//parameters [BB = blueberry] [PA = pineapple]
+const BBOnePosition = [60, 60];
+const BBTwoPosition = [105, 60];
+const PAOnePosition = [155, 160]; 
+const crossStrokeWeight = 40;
+const squareSize = 10;
+const BBSize = 50;
+const PASize = 110;
+const PAAngle = -5;
+const BBAngle = 5;
+const drawBlueberry = true;
+
+/*
+ *
+ */
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.resolution(NINE_PORTRAIT);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 30;
+
+  //setting up colours
+  blue = color(39, 94, 172);
+  yellow = color(253, 187, 76);
+  pink = color(251, 204, 214, 180);
+  brown = color(82, 70, 50);
+  green = color(188, 215, 90);
+  darkGreen = color(82, 191, 54);
+
+  stroke(pink);
+  fill(pink);
+
+}
+///////////////
+
+Final Wallpaper:
+
+//color palette
+var blue, yellow, pink, brown, darkGreen, green;
+
+//parameters [BB = blueberry] [PA = pineapple]
+const BBOnePosition = [80, 110];
+const BBTwoPosition = [170, 180];
+const PAOnePosition = [150, 60];
+const crossStrokeWeight = 5;
+const squareSize = 40;
+const BBSize = 30;
+const PASize = 60;
+const PAAngle = 20;
+const BBAngle = -20;
+const drawBlueberry = true;
+
+function setup_wallpaper(pWallpaper) {
+  pWallpaper.output_mode(GRID_WALLPAPER);
+  //pWallpaper.output_mode(DEVELOP_GLYPH);
+  pWallpaper.resolution(A3);
+  pWallpaper.show_guide(false); //set this to false when you're ready to print
+
+  //Grid settings
+  pWallpaper.grid_settings.cell_width = 200;
+  pWallpaper.grid_settings.cell_height = 200;
+  pWallpaper.grid_settings.row_offset = 65;
+
+  //setting up colours
+  blue = color(39, 94, 172);
+  yellow = color(253, 187, 76);
+  pink = color(251, 204, 214, 180);
+  brown = color(82, 70, 50);
+  green = color(188, 215, 90);
+  darkGreen = color(82, 191, 54);
+
+  stroke(pink);
+  fill(pink);
+
 }
